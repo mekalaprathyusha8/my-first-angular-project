@@ -1,0 +1,14 @@
+.logo{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    
+}
+.ms-auto{
+    margin-left: auto;
+}
+.header{
+    display: flex;
+    padding: 10px;
+     background-color: aqua;
+}

@@ -1,0 +1,23 @@
+
+.hero-section{
+    background-color: rgb(224, 205, 180);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    height: 500px;
+    font-size: 40px;
+}
+.card-section{
+    display: flex;
+    gap: 5px;
+    justify-content: space-around;
+    
+}
+.card{
+    flex:1;
+
+    border: 1px solid black;
+    text-align: center;
+    background-color: rgb(54, 175, 175);
+}
