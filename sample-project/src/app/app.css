@@ -1,0 +1,104 @@
+/* .text-box-red{
+    background-color: red;
+    color: white;
+
+}
+.text-box-green{
+    background-color: green;
+    color: white;
+
+}
+.table{
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td,th{
+    border: 1px solid black;
+    padding: 10px;
+} */
+
+/* .table{
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td,th{
+    border: 1px solid black;
+    padding: 10px;
+}
+.row-red{
+    background-color: rgb(204, 43, 43);
+    color: white;
+}
+.row-green{
+    background-color: rgb(32, 183, 32);
+    color: white;
+} */
+
+ .section{
+    display: flex;
+    padding: 5px ;
+    
+}
+
+.form{
+    flex: 1;
+    border-width: 1px 0px 1px 1px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.display-user{
+    flex: 2;
+    border: 1px solid black;
+    padding: 10px;
+}   
+
+.heading{
+    text-align: center;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+    
+}
+
+.input{
+    padding: 5px;
+    border-radius: 5px;
+    height: 15px;
+    border: solid 1px;
+}
+
+.btn{
+    padding: 5px;
+    border-radius: 20px;
+    height: 40px;
+    width: 100px;
+    border: solid 1px;
+    background-color: #167ff6;
+    color: white;
+    align-self: end;
+}
+
+.table{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    
+    
+}
+
+.table-data{
+   text-align: center;
+   border: solid 1px;
+   margin: 0;
+   padding: 5px;
+} 

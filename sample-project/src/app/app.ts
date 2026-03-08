@@ -1,16 +1,215 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../header/header.component';
-import { BodyComponent } from '../body/body.component';
-import { FooterComponent } from '../footer/footer.component';
+// import { Component, signal } from '@angular/core';
+// import { RouterOutlet } from '@angular/router';
+// import { HeaderComponent } from '../header/header.component';
+// import { BodyComponent } from '../body/body.component';
+// import { FooterComponent } from '../footer/footer.component';
+// import { email } from '@angular/forms/signals';
+
+// import { Component, signal, ViewEncapsulation } from '@angular/core';
+// import { User } from './models/user.model';
+// @Component({
+//   selector: 'app-root',
+//   // imports: [RouterOutlet, HeaderComponent,BodyComponent,FooterComponent],
+//   templateUrl: './app.html',
+//   styleUrl: './app.css',
+//   standalone: true,
+//   encapsulation: ViewEncapsulation.Emulated
+// })
+// export class App {
+//   protected readonly title = signal('sample-project');
+
+  // name = 'Angular';
+  // textType = "text";
+  // inputclass = "text-box-green";
+  // inputstyle = `
+  // font-size:2rem;
+  // font-weight: bold;
+  // `;
+  // constructor(){
+  //   console.log(this.getFullName());
+  // }
+  // getFullName(){
+  //   return "Mekala Prathyusha"
+  // }
+  // inputType = "text";
+  // name="Angular";
+  // getFullName(){
+  // return "Mekala Prathyusha"
+  // }
+  // colSpanMessage = 3
+  // colSpanPrice= 2
+
+  // user= {
+  //   userId: 1,
+  //   name: "Mekala Prathyusha",
+  //   email: "mekalaprathyusha@gmail.com",
+  //   phone: 1234567890
+  // }
+  // user: User = {userId: 1, name: "Mekala Prathyusha", email: "mekalaprathyusha@gmail.com", phone: 1234567890, age: 24, gender: "female"};
+ // users!: User[]
+
+//  constructor(){
+//   this.assignUser();
+//  }
+//   assignUser()
+//   {
+//     this.users =
+//     [
+//       {userId: 1,name: "Mekala Prathyusha",email: "mekalaprathyusha@gmail.com",phone: 1234567890, status: "active", backgroundColor:"#92d6ef", fontSize: "1.5rem"},
+//       {userId: 2,name: "sunny",email: "sunny@gmail.com",phone: 9876543210,age: 25,status: "inactive", backgroundColor:"#ebef92", fontSize: "2rem"},
+//       {userId: 3,name: "chintuu",email: "chintuu@gmail.com",phone: 1122334455,age: 22,gender: "male",status: "active", backgroundColor:"#92ef92", fontSize: "2.5rem"},
+//       {userId: 4,name: "Prathyusha Mekala",email: "prathyushamekala@gmail.com",phone: 1234567893,gender: "female",status: "inactive", backgroundColor:"#ef9292", fontSize: "3rem"}
+//     ]
+//   }
+// }
+
+// buttonClick(event:Event){
+//   console.log("button clicked", event);
+// }
+// foused(){
+//   console.log("input focued");
+// }mouseenter(){
+//   console.log("mouse entered");
+// }
+// blurred(){
+//   console.log("input blurred");
+// }
+// }
+
+
+
+
+
+
+import { Component, ViewEncapsulation } from '@angular/core';
+import { User } from './user.model';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent,BodyComponent,FooterComponent],
+  selector: 'app-home',
+  standalone: true,
   templateUrl: './app.html',
-  styleUrl: './app.css',
-  standalone: true
+  styleUrls: ['./app.css'],
+  encapsulation: ViewEncapsulation.Emulated,
+  imports: [FormsModule, CommonModule],
 })
-export class App {
-  protected readonly title = signal('sample-project');
+export class Home {
+  id: number = 0;
+  name: string = "";
+  phone: string = "";
+  email: string = "";
+  gender: string = "";
+  course: string = "";
+  department: string = "";
+  address: string = "";
+
+  // checkbox variables
+  C: boolean = false;
+  Js: boolean = false;
+  Java: boolean = false;
+  Python: boolean = false;
+
+  user: User[] = [];
+
+  formHeading: string = 'Add User';
+  buttonText: string = 'Add';
+  currentEditId: number | null = null;
+
+  editUser(id: number) {
+    const selectedUser = this.user.find(user => user.id === id);
+
+    if (selectedUser) {
+      this.currentEditId = id;
+      this.formHeading = 'Edit user';
+      this.buttonText = 'Update';
+
+      this.name = selectedUser.name;
+      this.email = selectedUser.email;
+      this.phone = selectedUser.phone.toString();
+      this.address = selectedUser.address;
+      this.department = selectedUser.department;
+      this.gender = selectedUser.gender;
+      this.course = selectedUser.course;
+
+      // restore checkbox values
+     
+      this.C = selectedUser.course.includes("C");
+      this.Js = selectedUser.course.includes("Js");
+      this.Python = selectedUser.course.includes("Python");
+      this.Java = selectedUser.course.includes("Java");
+
+    }
+  }
+
+  addUser() {
+
+    // convert checkbox values to string
+    let selectedCourses: string[] = [];
+
+    if (this.C) selectedCourses.push("C");
+    if (this.Js) selectedCourses.push("Js");
+
+    this.course = selectedCourses.join(", ");
+
+    if (this.currentEditId !== null) {
+
+      const index = this.user.findIndex(u => u.id === this.currentEditId);
+
+      if (index !== -1) {
+        this.user[index] = {
+          id: this.currentEditId,
+          name: this.name,
+          email: this.email,
+          phone:this.phone,
+          address: this.address,
+          department: this.department,
+          course: this.course,
+          gender: this.gender
+        };
+      }
+
+      this.currentEditId = null;
+
+    } else {
+
+      let data: User = {
+        id: this.user.length + 1,
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        address: this.address,
+        department: this.department,
+        course: this.course,
+        gender: this.gender
+      };
+
+      this.user.push(data);
+    }
+
+    this.clearForm();
+  }
+
+  deleteUser(id: number) {
+    this.user = this.user.filter(u => u.id !== id);
+  }
+
+  clearForm() {
+    this.name = "";
+    this.email = "";
+    this.phone = "";
+    this.address = "";
+    this.department = "";
+    this.course = "";
+    this.gender = "";
+
+    // reset checkboxes
+    this.C = false;
+    this.Js= false;
+    this.Python=false;
+    this.Java=false;
+
+    this.formHeading = "Add User";
+    this.buttonText = "Add";
+  }
 }

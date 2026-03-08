@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.h-100 { height: 100dvh;}
+.mt-3 {margin-top: 30px;}
+/* .w-80 { width: 80% !important;}
+.text-center {text-align: center;}
+.p-5 {padding: 1.5rem;}
+.br-20 {border-radius: 20px;} */
+.row {
+    display: flex;
+    gap: 25px;
+    padding: 20px;
+    align-items: baseline;
+}
+.form-container {
+    flex: 1;
+}
+.table-container {
+    flex: 2;
+}
+.card {
+    border: 1px solid #ccc;
+    border-radius:10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-control {
+    width: 100%;
+    outline: none;
+    border: 1px solid #170404db;
+    padding: .5rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    font-size: 14px;
+}
+.form-control-label {
+    display: block;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.form-control-error{
+    color: rgb(191, 9, 9);
+    margin-left: 5px;
+    margin-top: 5px;
+    display: block;
+
+}
+
+.btn {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: .5rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: rgb(9, 18, 191);
+    color: white;
+}
+.btn-danger {
+    background-color: rgb(219, 58, 4);
+    color: white;
+}
+.table {
+    width: 80%;
+    border: 1px solid #1a0808aa;
+    border-collapse: collapse;
+}
+.table th, .table td{
+    border: 1px solid #1a0808aa;
+    padding: .8rem;
+}

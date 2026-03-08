@@ -1,6 +1,208 @@
 
-<app-header></app-header>
+<!-- <app-header></app-header>
 
 <app-body></app-body>
 <app-footer></app-footer>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+<!-- <h1>{{getFullName()}}</h1> -->
+<!-- <input type="{{textType}}" value="{{getFullName()}}" class="text-box-red"> 
+<input type="{{textType}}" value="{{getFullName()}}" class="{{inputclass}}" style="{{inputstyle}}" > -->
+<!-- <input [type]="inputType" [value]="getFullName()" > -->
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th>SNO</th>
+            <th>Name</th>
+            <th>Price</th> 
+            <th>Quantity</th> 
+            <th>Sub Total</th>  
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Mobile</td>
+            <td>10000</td>
+            <td>1</td>
+            <td>10000</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Laptop</td>
+            <td>50000</td>
+            <td>2</td>
+            <td>100000</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Tablet</td>
+            <td>15000</td>
+            <td>1</td>
+            <td>15000</td>
+        </tr>
+        <tr>
+            <td [attr.colspan]="colSpanMessage">3 items in cart</td>
+            <td [attr.colspan]="colSpanPrice">125000</td>
+        </tr>
+    </tbody>
+</table> -->
+
+
+
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th>userId</th>
+            <th> name</th>
+            <th> email</th>
+            <th> phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{user.userId}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+        </tr>
+    </tbody>
+</table> 
+
+
+<table class="">
+    <thead>
+        <tr>
+            <th>userId</th>
+            <th> name</th>
+            <th> email</th>
+            <th> phone</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(user of users; track $index){
+       <tr [class.row-red]="user.status === 'inactive'" [class.row-green]="user.status === 'active'"> 
+            <tr [style.background-color]="user.backgroundColor" [style.font-size]="user.fontSize"> 
+            <td>{{user.userId}}</td>
+            <td>{{user.name.toLocaleUpperCase()}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td> 
+            <td>{{user[`phone`]}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.gender?.toLocaleUpperCase()}}</td>
+            <td>{{user.status}}</td>
+            
+        </tr>
+         }
+    </tbody>
+</table>-->
+
+<!-- <div (click)="buttonClick($event)">click</div> -->
+
+<!-- <input type="text"(keyup)="buttonClick($event)"> -->
+<!-- <input type="text"(focus)="foused()" (mouseenter)="mouseenter()"> -->
+<!-- <input type="text"(focus)="foused()"(mouseenter)="mouseenter()"(blur)="blurred()"> -->
+
+
+<section class="section">
+
+    <form (ngSubmit)="addUser()"class="form">
+        <div class="heading">
+            <h1 >{{formHeading}}</h1>
+        </div>
+        <div class="box"> 
+            <label for="name">Name :</label>
+            <input class="input" type="text" name="name" [(ngModel)]="name">
+        </div>
+        <div class="box">
+            <label for="email">Email :</label>
+            <input class="input" type="email" name="email" [(ngModel)]="email">
+        </div>
+        <div class="box">   
+            <label for="phone">Phone :</label>
+            <input class="input" type="tel" name="phone" [(ngModel)]="phone">
+        </div>
+        <div class="box">
+            <label>Gender :</label>
+            <div>
+               
+                <input id="female" type="radio" name="gender" value="female" [(ngModel)]="gender">
+                <label for="female">Female</label>
+                  <input id="male" type="radio" name="gender" value="male" [(ngModel)]="gender">
+                <label for="male" >Male</label>
+
+               
+            </div>
+        </div>
+        <div class="box">
+            <label for="course">Courses :</label>
+            <div>
+                <input type="checkbox" id="C" [(ngModel)]="C" name="C" value="C">
+                <label for="C">C</label>
+                <input type="checkbox" id="Js" [(ngModel)]="Js" name="Js" value="Js">
+                <label for="Js">Js</label>
+                <input type="checkbox" id="Java" [(ngModel)]="Java" name="Java" value="Java">
+                <label for="Java">Java</label>
+                <input type="checkbox" id="Python" [(ngModel)]="Python" name="Python" value="Python">
+                <label for="Python">Python</label>
+
+
+            </div>
+        </div>
+        <div class="box">
+            <label for="department">Department</label>
+            <select name="department" [(ngModel)]="department">
+                <option value="">Select :</option>
+                <option value="CSM">CSM</option>
+                <option value="IT">IT</option>
+                <option value="CSD">CSD</option>
+                <option value="CSE">CSE</option>  
+                <option value="ECE">ECE</option>   
+            </select>  
+        </div>
+        <div class="box"> 
+            <label for="address" >Address :</label>
+            <!-- <input class="input" type="text" name="address" [(ngModel)]="address" >  -->
+            <textarea id="address" name="address" rows="4" cols="50"  [(ngModel)]="address"></textarea>
+        </div>
+        <div class="box">
+            <button class="btn" id="submit" type="submit">{{buttonText}}</button>
+        </div>
+    </form>
+
+    <div class="display-user">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td class="table-data">Name</td>
+                    <td class="table-data">Email</td>
+                    <td class="table-data">Address</td>
+                    <td class="table-data">Department</td>
+                    <td class="table-data">Course</td>
+                    <td class="table-data">Gender</td>
+                    <td class="table-data">Phone</td>
+                    <td class="table-data">Edit</td>
+                    <td class="table-data">Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                @for (users of user; track users.id) {
+                    <tr>
+                        <td class="table-data">{{users.name}}</td>
+                        <td class="table-data">{{users.email}}</td>
+                        <td class="table-data">{{users.address}}</td>
+                        <td class="table-data">{{users.department}}</td>
+                        <td class="table-data">{{users.course}}</td>
+                        <td class="table-data">{{users.gender}}</td>
+                        <td class="table-data">{{users.phone}}</td>
+                        <td class="table-data" ><button (click)="editUser(users.id)">edit</button></td>
+                        <td class="table-data"><button (click)="deleteUser(users.id)">delete</button></td>
+                    </tr>
+                } 
+            </tbody>
+        </table>
+    </div>
+
+</section>
