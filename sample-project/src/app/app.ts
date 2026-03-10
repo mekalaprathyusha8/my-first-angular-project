@@ -189,30 +189,28 @@
 
 
 
-import { Component, LOCALE_ID} from '@angular/core';
+import {Component, LOCALE_ID} from '@angular/core';
 import {Student} from './models/student.model'
-import{CaptalizePipe} from  "./pipes/capitalize.pipe"
-import{DatePipe, DecimalPipe} from '@angular/common'
+import {CapitalizePipe } from './pipes/capitalize.pipe';
 import {ConcatPipe } from './pipes/concat.pipe';
-import { PhonePipe } from './pipes/phone.pipe';
-import { CurrencyPipe} from '@angular/common';
-import { pipe } from 'rxjs';
+import {PhonePipe } from './pipes/phone.pipe';
+import{CurrencyPipe} from '@angular/common';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  providers: [{ provide: LOCALE_ID, useValue: 'en-IN'  }],
-  imports: [CaptalizePipe, ConcatPipe, DecimalPipe, PhonePipe, CurrencyPipe, DatePipe]
+  providers: [{ provide: LOCALE_ID, useValue: 'en-US' }],
+  imports: [CapitalizePipe, ConcatPipe, PhonePipe, CurrencyPipe, DecimalPipe]
 })
-
 export class App {
   students: Student[]=[
   { 
     name: "prathyusha",
     email:"prathyusha@gmail.com",
     status:"active",
-    dob:"2002-10-22T11:55",
+    dob:"2002-10-22",
     phone:7075516924,
     emcetRank: 17349,
     yearlyFee:600.2500,
@@ -228,7 +226,7 @@ export class App {
     name: "chintu",
     email:"chintu@gmail.com",
     status:"active",
-    dob:"2000-10-22T12:32",
+    dob:"2000-10-22",
     phone:6305612347,
     emcetRank: 174549,
     yearlyFee:800.35200,
@@ -245,32 +243,17 @@ export class App {
     name: "usha",
     email:"usha@gmail.com",
     status:"active",
-    dob:"2000-10-18T08:00",
+    dob:"2000-10-18",
     phone:7032416324,
     emcetRank: 20349,
     yearlyFee:70000,
     aggregate: 8.3,
     backlog:0,
-    gender:"Female",
+    gender:"male",
     marks:{
       java:80,
       python:66,
       php:55
-    }
-  },{
-    name: "sunny",
-    email:"sunny@gmail.com",
-    status:"inactive",
-    dob:"2001-10-22T12:32",
-    phone:9876543210,
-    emcetRank: 17349,
-    yearlyFee:600.2500,
-    aggregate: 9.3,
-    backlog:1,
-    gender:"male",
-    marks:{
-      java:89,
-      python:56,
     }
   }
   ]

@@ -246,9 +246,9 @@
                         P
                     </div>
                     <div>
-                        <!--  <h2>{{student.name.charAt(0). toUpperCase()}}{{student.name.slice(1, student.name.length)}}</h2> -->
-                         <h2>{{student.name | concat :"44" : 'ddd'| captalize:  23 : 'sss'}}</h2> 
-                         <p class="mt-1 light">{{student.email| captalize | concat   }}</p>
+                        <!-- <h2>{{student.name.charAt(0). toUpperCase()}}{{student.name.slice(1, student.name.length)}}</h2> -->
+                        <h2>{{student.name | concat :"44" : 'ddd'| captalize:  23 : 'sss'}}</h2> 
+                        <p class="mt-1 light">{{student.email| captalize | concat   }}</p>
                     </div>
                     <div class="ms-auto">
                         <div class="profile-status">{{student.status}}</div>
@@ -256,7 +256,7 @@
                 </div>
                 <div class="profile-info p-2 br-2 mt-4">
                     <div class="mt-1">call me ! <span class="bold">{{student.phone | phone}}</span></div>
-                    <div>I born on <span class="bold">{{student.dob | date: 'mediumDate':'Asia/Kolkata': 'en-IN'}}</span>, I am a <span class="bold">{{student.gender}}</span></div>
+                    <div>I born on <span class="bold"></span>, I am a <span class="bold">{{student.gender}}</span></div>
                     <div class="fs-p9 mt-1">My EMCET Rank is <span class="bold">{{student.emcetRank | number : '1.0-0': 'en-IN'}}</span></div>
                     <div class="fs-p9 mt-1">Yearly Fee : <span class="bold">{{student.yearlyFee | currency : 'INR': 'symbol':'1.1-3':'en-IN' }}</span></div>
                     <div class="fs-p9 mt-1">Aggregate : <span class="bold">{{student.aggregate}}</span> </div>

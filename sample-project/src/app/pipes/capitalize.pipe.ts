@@ -20,7 +20,7 @@ import { Pipe,PipeTransform } from '@angular/core';
     name: 'captalize',
     standalone:true
 })
-export class CaptalizePipe implements PipeTransform {
+export class CapitalizePipe implements PipeTransform {
     transform(value: any, ...args: any[]){
     //    return value + " is a student";
     value = value.charAt(0).toUpperCase() +""+ value.slice(1);
