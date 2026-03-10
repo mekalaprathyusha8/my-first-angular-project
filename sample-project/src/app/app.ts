@@ -81,135 +81,197 @@
 
 
 
-import { Component, ViewEncapsulation } from '@angular/core';
-import { User } from './user.model';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+// import { Component, ViewEncapsulation } from '@angular/core';
+// import { User } from './user.model';
+// import { FormsModule } from '@angular/forms';
+// import { CommonModule } from '@angular/common';
+
+// @Component({
+//   selector: 'app-home',
+//   standalone: true,
+//   templateUrl: './app.html',
+//   styleUrls: ['./app.css'],
+//   encapsulation: ViewEncapsulation.Emulated,
+//   imports: [FormsModule, CommonModule],
+// })
+// export class Home {
+//   id: number = 0;
+//   name: string = "";
+//   phone: string = "";
+//   email: string = "";
+//   gender: string = "";
+//   course: string = "";
+//   department: string = "";
+//   address: string = "";
+
+//   // checkbox variables
+//   C: boolean = false;
+//   Js: boolean = false;
+//   Java: boolean = false;
+//   Python: boolean = false;
+
+//   user: User[] = [];
+
+//   formHeading: string = 'Add User';
+//   buttonText: string = 'Add';
+//   currentEditId: number | null = null;
+
+//   editUser(id: number) {
+//     const selectedUser = this.user.find(user => user.id === id);
+
+//     if (selectedUser) {
+//       this.currentEditId = id;
+//       this.formHeading = 'Edit user';
+//       this.buttonText = 'Update';
+
+//       this.name = selectedUser.name;
+//       this.email = selectedUser.email;
+//       this.phone = selectedUser.phone.toString();
+//       this.address = selectedUser.address;
+//       this.department = selectedUser.department;
+//       this.gender = selectedUser.gender;
+//       this.course = selectedUser.course;
+
+//       // restore checkbox values
+     
+//       this.C = selectedUser.course.includes("C");
+//       this.Js = selectedUser.course.includes("Js");
+//       this.Python = selectedUser.course.includes("Python");
+//       this.Java = selectedUser.course.includes("Java");
+
+//     }
+//   }
+
+//   addUser() {
+
+//     // convert checkbox values to string
+//     let selectedCourses: string[] = [];
+
+//     if (this.C) selectedCourses.push("C");
+//     if (this.Js) selectedCourses.push("Js");
+
+//     this.course = selectedCourses.join(", ");
+
+//     if (this.currentEditId !== null) {
+
+//       const index = this.user.findIndex(u => u.id === this.currentEditId);
+
+//       if (index !== -1) {
+//         this.user[index] = {
+//           id: this.currentEditId,
+//           name: this.name,
+//           email: this.email,
+//           phone:this.phone,
+//           address: this.address,
+//           department: this.department,
+//           course: this.course,
+//           gender: this.gender
+//         };
+//       }
+
+//       this.currentEditId = null;
+
+//     } else {
+
+//       let data: User = {
+//         id: this.user.length + 1,
+//         name: this.name,
+//         email: this.email,
+//         phone: this.phone,
+//         address: this.address,
+//         department: this.department,
+//         course: this.course,
+//         gender: this.gender
+//       };
+
+//       this.user.push(data);
+//     }
+
+
+
+import { Component, LOCALE_ID} from '@angular/core';
+import {Student} from './models/student.model'
+import{CaptalizePipe} from  "./pipes/capitalize.pipe"
+import{DatePipe, DecimalPipe} from '@angular/common'
+import {ConcatPipe } from './pipes/concat.pipe';
+import { PhonePipe } from './pipes/phone.pipe';
+import { CurrencyPipe} from '@angular/common';
+import { pipe } from 'rxjs';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
+  selector: 'app-root',
   templateUrl: './app.html',
-  styleUrls: ['./app.css'],
-  encapsulation: ViewEncapsulation.Emulated,
-  imports: [FormsModule, CommonModule],
+  styleUrl: './app.css',
+  providers: [{ provide: LOCALE_ID, useValue: 'en-IN'  }],
+  imports: [CaptalizePipe, ConcatPipe, DecimalPipe, PhonePipe, CurrencyPipe, DatePipe]
 })
-export class Home {
-  id: number = 0;
-  name: string = "";
-  phone: string = "";
-  email: string = "";
-  gender: string = "";
-  course: string = "";
-  department: string = "";
-  address: string = "";
 
-  // checkbox variables
-  C: boolean = false;
-  Js: boolean = false;
-  Java: boolean = false;
-  Python: boolean = false;
-
-  user: User[] = [];
-
-  formHeading: string = 'Add User';
-  buttonText: string = 'Add';
-  currentEditId: number | null = null;
-
-  editUser(id: number) {
-    const selectedUser = this.user.find(user => user.id === id);
-
-    if (selectedUser) {
-      this.currentEditId = id;
-      this.formHeading = 'Edit user';
-      this.buttonText = 'Update';
-
-      this.name = selectedUser.name;
-      this.email = selectedUser.email;
-      this.phone = selectedUser.phone.toString();
-      this.address = selectedUser.address;
-      this.department = selectedUser.department;
-      this.gender = selectedUser.gender;
-      this.course = selectedUser.course;
-
-      // restore checkbox values
-     
-      this.C = selectedUser.course.includes("C");
-      this.Js = selectedUser.course.includes("Js");
-      this.Python = selectedUser.course.includes("Python");
-      this.Java = selectedUser.course.includes("Java");
-
+export class App {
+  students: Student[]=[
+  { 
+    name: "prathyusha",
+    email:"prathyusha@gmail.com",
+    status:"active",
+    dob:"2002-10-22T11:55",
+    phone:7075516924,
+    emcetRank: 17349,
+    yearlyFee:600.2500,
+    aggregate: 9.3,
+    backlog:0,
+    gender:"Female",
+    marks:{
+      java:89,
+      python:56,
+    }
+  },
+  { 
+    name: "chintu",
+    email:"chintu@gmail.com",
+    status:"active",
+    dob:"2000-10-22T12:32",
+    phone:6305612347,
+    emcetRank: 174549,
+    yearlyFee:800.35200,
+    aggregate: 9.4,
+    backlog:2,
+    gender:"male",
+    marks:{
+      java:60,
+      python:46,
+      ios:75,
+    }
+  },
+  { 
+    name: "usha",
+    email:"usha@gmail.com",
+    status:"active",
+    dob:"2000-10-18T08:00",
+    phone:7032416324,
+    emcetRank: 20349,
+    yearlyFee:70000,
+    aggregate: 8.3,
+    backlog:0,
+    gender:"Female",
+    marks:{
+      java:80,
+      python:66,
+      php:55
+    }
+  },{
+    name: "sunny",
+    email:"sunny@gmail.com",
+    status:"inactive",
+    dob:"2001-10-22T12:32",
+    phone:9876543210,
+    emcetRank: 17349,
+    yearlyFee:600.2500,
+    aggregate: 9.3,
+    backlog:1,
+    gender:"male",
+    marks:{
+      java:89,
+      python:56,
     }
   }
-
-  addUser() {
-
-    // convert checkbox values to string
-    let selectedCourses: string[] = [];
-
-    if (this.C) selectedCourses.push("C");
-    if (this.Js) selectedCourses.push("Js");
-
-    this.course = selectedCourses.join(", ");
-
-    if (this.currentEditId !== null) {
-
-      const index = this.user.findIndex(u => u.id === this.currentEditId);
-
-      if (index !== -1) {
-        this.user[index] = {
-          id: this.currentEditId,
-          name: this.name,
-          email: this.email,
-          phone:this.phone,
-          address: this.address,
-          department: this.department,
-          course: this.course,
-          gender: this.gender
-        };
-      }
-
-      this.currentEditId = null;
-
-    } else {
-
-      let data: User = {
-        id: this.user.length + 1,
-        name: this.name,
-        email: this.email,
-        phone: this.phone,
-        address: this.address,
-        department: this.department,
-        course: this.course,
-        gender: this.gender
-      };
-
-      this.user.push(data);
-    }
-
-    this.clearForm();
-  }
-
-  deleteUser(id: number) {
-    this.user = this.user.filter(u => u.id !== id);
-  }
-
-  clearForm() {
-    this.name = "";
-    this.email = "";
-    this.phone = "";
-    this.address = "";
-    this.department = "";
-    this.course = "";
-    this.gender = "";
-
-    // reset checkboxes
-    this.C = false;
-    this.Js= false;
-    this.Python=false;
-    this.Java=false;
-
-    this.formHeading = "Add User";
-    this.buttonText = "Add";
-  }
+  ]
 }
