@@ -251,7 +251,7 @@
                         <p class="mt-1 light">{{student.email| captalize | concat   }}</p>
                     </div>
                     <div class="ms-auto">
-                        <div class="profile-status">{{student.status}}</div>
+                        <div class="profile-status">{{student.status }}  {{ student.time | timepipe}} hours ago</div>
                     </div>
                 </div>
                 <div class="profile-info p-2 br-2 mt-4">

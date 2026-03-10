@@ -196,13 +196,15 @@ import {ConcatPipe } from './pipes/concat.pipe';
 import {PhonePipe } from './pipes/phone.pipe';
 import{CurrencyPipe} from '@angular/common';
 import { DecimalPipe } from '@angular/common';
+import{TimePipe} from './pipes/time.pipe';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
   providers: [{ provide: LOCALE_ID, useValue: 'en-US' }],
-  imports: [CapitalizePipe, ConcatPipe, PhonePipe, CurrencyPipe, DecimalPipe]
+  imports: [CapitalizePipe, ConcatPipe, PhonePipe, CurrencyPipe, DecimalPipe, TimePipe]
 })
 export class App {
   students: Student[]=[
@@ -210,6 +212,7 @@ export class App {
     name: "prathyusha",
     email:"prathyusha@gmail.com",
     status:"active",
+    time:"2026-01-22T01:30", 
     dob:"2002-10-22",
     phone:7075516924,
     emcetRank: 17349,
@@ -226,6 +229,7 @@ export class App {
     name: "chintu",
     email:"chintu@gmail.com",
     status:"active",
+    time:"2026-02-20T04:45",
     dob:"2000-10-22",
     phone:6305612347,
     emcetRank: 174549,
@@ -243,6 +247,7 @@ export class App {
     name: "usha",
     email:"usha@gmail.com",
     status:"active",
+    time:"2026-02-18T02:15",
     dob:"2000-10-18",
     phone:7032416324,
     emcetRank: 20349,
@@ -254,6 +259,22 @@ export class App {
       java:80,
       python:66,
       php:55
+    }
+  },{
+    name: "sunny",
+    email:"sunny@gmail.com",
+    status:"inactive",
+    time:"2026-01-25T06:30",
+    dob:"2001-10-22",
+    phone:9876543210,
+    emcetRank: 17349,
+    yearlyFee:600.2500,
+    aggregate: 9.3,
+    backlog:1,
+    gender:"male",
+    marks:{
+      java:89,
+      python:56,
     }
   }
   ]

@@ -3,6 +3,7 @@ export interface Student {
     email: string;
     phone: number;
     status: string;
+    time: string;
     dob: string;
     emcetRank: number;
     yearlyFee: number;
