@@ -236,33 +236,66 @@
     }
 </div>-->
 
-
+<!-- <div>{{students | json}}</div> -->
 <div class="row">
-    @for (student of students; track $index) {
+    @for (student of students; track $index) 
+    {
         <div class="item p-1">
             <div class="card br-2 p-3">
                 <div class="row g-2">
                     <div class="profile-circle middle">
-                        P
+                        {{student.name |slice:0:1 | uppercase}}
                     </div>
                     <div>
                         <!-- <h2>{{student.name.charAt(0). toUpperCase()}}{{student.name.slice(1, student.name.length)}}</h2> -->
-                        <h2>{{student.name | concat :"44" : 'ddd'| captalize:  23 : 'sss'}}</h2> 
-                        <p class="mt-1 light">{{student.email| captalize | concat   }}</p>
+                        <!-- <h2>{{student.name | concat :"44": 13 : 'ddd'| captalize:  23 : 'sss'}}</h2>  -->
+                         <h2>{{student.name | titlecase}}</h2>
+                        <p class="mt-1 light">{{student.email| lowercase}}</p>
                     </div>
                     <div class="ms-auto">
-                        <div class="profile-status">{{student.status }}  {{ student.time | timepipe}} hours ago</div>
+                        <div class="profile-status">{{student.status | uppercase }}</div>
                     </div>
                 </div>
                 <div class="profile-info p-2 br-2 mt-4">
                     <div class="mt-1">call me ! <span class="bold">{{student.phone | phone}}</span></div>
-                    <div>I born on <span class="bold"></span>, I am a <span class="bold">{{student.gender}}</span></div>
+                    <div class="fs-p9">I born on <span class="bold">{{student.dob | date:'medium': 'Asia/Kolkata':'en-IN'}}</span>, I am a <span class="bold">
+                        {{student.gender | i18nSelect : genderMessage}}
+                        <!-- @if(student.gender === 'Male'){
+                            Boy  
+                        }@else if(student.gender === 'Female'){
+                            Girl
+                        }@else{
+                            Other
+                        } -->
+                    </span></div>
                     <div class="fs-p9 mt-1">My EMCET Rank is <span class="bold">{{student.emcetRank | number : '1.0-0': 'en-IN'}}</span></div>
                     <div class="fs-p9 mt-1">Yearly Fee : <span class="bold">{{student.yearlyFee | currency : 'INR': 'symbol':'1.1-3':'en-IN' }}</span></div>
-                    <div class="fs-p9 mt-1">Aggregate : <span class="bold">{{student.aggregate}}</span> </div>
+                    <div class="fs-p9 mt-1">Aggregate : <span class="bold">{{student.aggregate/10 | percent : '1.1-2':'en-IN'}}</span> </div>
                 </div>
-                <div class=" text-right mt-3 p-1 fs-p9 light">Backlog : <span class="bold">{{student.backlog}}</span></div>
+                <div class="row">
+                @for (mark of student.marks | keyvalue; track $index) {
+                    <div class="item p-1">
+                        <div class="p-2 bg-light-primary">
+                            <div class="fs-p8">{{mark.key}}</div>
+                            <div class="font-weight-bold">{{mark.value}}</div>
+                        </div>
+                    </div>
+                }
+                </div>
+                <div class=" text-right mt-3 p-1 fs-p9 light">Backlog : <span class="bold">
+                    {{student.backlog | i18nPlural : backlogMessage}}</span>
+                    <!-- @if(student.backlog==0){
+                        No Backlogs
+                    }@else if(student.backlog===1){
+                        1 Backlog
+                    }@else{
+                        {{student.backlog}} Backlogs
+                    } -->
+                </div>
+                <div class=" text-right fs-p9 light"> {{ student.time | timepipe}}</div>
+                
             </div>
         </div>
     }
 </div>  
+

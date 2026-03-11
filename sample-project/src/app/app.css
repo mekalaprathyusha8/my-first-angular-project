@@ -147,6 +147,15 @@ td,th{
 }
 .text-center{
     text-align: center;
+    background-color: #abf5d6;
+}
+.text-right{
+    text-align: right;
+    background-color: #6ad9ab;
+}
+.text-left{
+    text-align: left;
+    background-color: #6ad9ab;
 }
 .m-auto{margin: auto;}
 .ms-auto{margin-left: auto;}
@@ -179,3 +188,4 @@ td,th{
 .bold{font-weight: bold;}
 .bolder{font-weight: bolder;}
 .light{font-weight: 500;}
+.bg-light-primary{background-color: #6ad9ab;}    

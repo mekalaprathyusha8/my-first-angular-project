@@ -192,24 +192,26 @@
 import {Component, LOCALE_ID} from '@angular/core';
 import {Student} from './models/student.model'
 import {CapitalizePipe } from './pipes/capitalize.pipe';
-import {ConcatPipe } from './pipes/concat.pipe';
 import {PhonePipe } from './pipes/phone.pipe';
-import{CurrencyPipe} from '@angular/common';
-import { DecimalPipe } from '@angular/common';
-import{TimePipe} from './pipes/time.pipe';
+import{CommonModule} from '@angular/common';
+import {CurrencyPipe} from '@angular/common';
+import {DecimalPipe, I18nPluralPipe, I18nSelectPipe, LowerCasePipe,UpperCasePipe,TitleCasePipe,PercentPipe,KeyValuePipe,SlicePipe } from '@angular/common';
+import {TimePipe} from './pipes/time.pipe';
+import {DatePipe} from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   templateUrl: './app.html',
   styleUrl: './app.css',
   providers: [{ provide: LOCALE_ID, useValue: 'en-US' }],
-  imports: [CapitalizePipe, ConcatPipe, PhonePipe, CurrencyPipe, DecimalPipe, TimePipe]
+  imports: [CommonModule, PhonePipe, CurrencyPipe, DecimalPipe, TimePipe, I18nPluralPipe, I18nSelectPipe, DatePipe, LowerCasePipe,UpperCasePipe,TitleCasePipe,PercentPipe,KeyValuePipe,SlicePipe]
 })
 export class App {
   students: Student[]=[
   { 
-    name: "prathyusha",
+    name: "prathyusha mekala",
     email:"prathyusha@gmail.com",
     status:"active",
     time:"2026-01-22T01:30", 
@@ -225,43 +227,8 @@ export class App {
       python:56,
     }
   },
-  { 
-    name: "chintu",
-    email:"chintu@gmail.com",
-    status:"active",
-    time:"2026-02-20T04:45",
-    dob:"2000-10-22",
-    phone:6305612347,
-    emcetRank: 174549,
-    yearlyFee:800.35200,
-    aggregate: 9.4,
-    backlog:2,
-    gender:"male",
-    marks:{
-      java:60,
-      python:46,
-      ios:75,
-    }
-  },
-  { 
-    name: "usha",
-    email:"usha@gmail.com",
-    status:"active",
-    time:"2026-02-18T02:15",
-    dob:"2000-10-18",
-    phone:7032416324,
-    emcetRank: 20349,
-    yearlyFee:70000,
-    aggregate: 8.3,
-    backlog:0,
-    gender:"male",
-    marks:{
-      java:80,
-      python:66,
-      php:55
-    }
-  },{
-    name: "sunny",
+  {
+    name: "sunny kankanala",
     email:"sunny@gmail.com",
     status:"inactive",
     time:"2026-01-25T06:30",
@@ -271,11 +238,81 @@ export class App {
     yearlyFee:600.2500,
     aggregate: 9.3,
     backlog:1,
-    gender:"male",
+    gender:"Male",
     marks:{
       java:89,
       python:56,
     }
+  },
+  { 
+    name: "usha mekala",
+    email:"usha@gmail.com",
+    status:"active",
+    time:"2026-02-18T02:15",
+    dob:"2000-10-18",
+    phone:7032416324,
+    emcetRank: 20349,
+    yearlyFee:70000,
+    aggregate: 8.3,
+    backlog:0,
+    gender:"Female",
+    marks:{
+      java:80,
+      python:66,
+      php:55
+    }
+  },
+  {
+    name:"xyz abc",
+    email:"xyz@gmail.com",
+    status:"inactive",
+    time:"2026-01-25T06:30",
+    dob:"2001-10-22",
+    phone:9876543210,
+    emcetRank: 17349,
+    yearlyFee:600.2500,
+    aggregate: 9.3,
+    backlog:1,
+    gender:"other",
+    marks:{
+      java:89,
+      python:56,
+    }
+
+  },{ 
+    name: "chintu mekala",
+    email:"chintu@gmail.com",
+    status:"active",
+    time:"2026-02-20T04:45",
+    dob:"2000-10-22",
+    phone:6305612347,
+    emcetRank: 174549,
+    yearlyFee:800.35200,
+    aggregate: 9.4,
+    backlog:2,
+    gender:"Male",
+    marks:{
+      java:60,
+      python:46,
+      ios:75,
+    }
   }
   ]
+  
+  backlogMessage = {
+    "=0": 'No Backlogs',
+    "=1": 'one Backlog',
+    "other": '# Backlogs'
+  }
+  genderMessage = { 
+    "Male": 'Boy',
+    "Female": 'Girl',
+    "other": 'Other'
+  }
 }
+
+
+
+
+
+
