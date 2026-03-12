@@ -1,0 +1,16 @@
+<div class="row h-100">
+
+    <app-add-user
+        (addEvent)="addUser($event)"
+        (updateEvent)="updateUser($event)"
+        [editUserData]="selectedUser"
+        [formType]="formType">
+    </app-add-user>
+
+    <app-users
+        [users]="users"
+        (deleteEvent)="deleteUser($event)"
+        (editEvent)="editUser($event)">
+    </app-users>
+
+</div>

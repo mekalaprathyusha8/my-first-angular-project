@@ -1,0 +1,6 @@
+<h1>Parent Component</h1>
+<app-child [parentName]="name" [user]="user" [users]="users" (send)="receiveData($event)" (sendStudent)="receiveStudent($event)" (sendStudents)="receiveStudents($event)"></app-child>
+
+<h1> I am student displaying in parent component</h1>
+<h2>{{ student | json }} </h2>
+<h2>{{ students | json }} </h2>

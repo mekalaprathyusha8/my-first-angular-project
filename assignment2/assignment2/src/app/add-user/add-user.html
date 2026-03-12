@@ -1,0 +1,81 @@
+<!-- <div class="form-container middle">
+    <div class="card w-80 br-20">
+
+        <form (submit)="submitForm()">
+
+            <h2 class="text-center p-1">
+                {{formType == 'add' ? 'Add User' : 'Edit User'}}
+            </h2>
+
+            <div class="m-3">
+                <label>Name</label>
+                <input type="text"
+                    [(ngModel)]="name"
+                    name="name"
+                    class="form-control"
+                    required>
+            </div>
+
+            <div class="m-3">
+                <label>Email</label>
+                <input type="email"
+                    [(ngModel)]="email"
+                    name="email"
+                    class="form-control"
+                    required>
+            </div>
+
+            <div class="m-3">
+                <label>Phone</label>
+                <input type="tel"
+                    [(ngModel)]="phone"
+                    name="phone"
+                    class="form-control"
+                    required>
+            </div>
+
+            <input
+                type="submit"
+                class="btn btn-primary"
+                [value]="formType === 'add' ? 'Add' : 'Save'">
+
+        </form>
+
+    </div>
+</div> -->
+
+<div class="m-3">
+<label class="form-control-label">Name</label>
+<input type="text"
+[(ngModel)]="name"
+name="name"
+(keyup)="checkName()"
+class="form-control"
+placeholder="Enter name">
+<label class="form-control-error">{{errorName}}</label>
+</div>
+
+<div class="m-3">
+<label class="form-control-label">Email</label>
+<input type="email"
+[(ngModel)]="email"
+name="email"
+(keyup)="checkEmail()"
+class="form-control"
+placeholder="Enter email">
+<label class="form-control-error">{{errorEmail}}</label>
+</div>
+
+<div class="m-3">
+<label class="form-control-label">Phone</label>
+<input type="tel"
+[(ngModel)]="phone"
+name="phone"
+(keyup)="checkPhone()"
+class="form-control"
+placeholder="Enter phone">
+<label class="form-control-error">{{errorPhone}}</label>
+</div>
+<form (submit)="submitForm()">
+<input type="submit" class="btn btn-primary" [value]="formType === 'add' ? 'Add' : 'Save'" [disabled]="!name || !email || !phone">
+</form>

@@ -1,0 +1,35 @@
+<div class="row h-100">
+    <div class="form-container middle">
+        <div class="card w-80 br-20">
+            <form (submit)="addUser()">
+                <h2 class="text-center p-1">
+                    {{formType=='add'?'Add User':'Edit User'}}
+                </h2>
+                <div class="m-3">
+                    <label for ="name" class="form-control-label">Name</label>
+                    <input type="text" [(ngModel)]="name" name="name" (keyup)="checkIsNameInvalid()" placeholder="Enter name" class="form-control" required>
+                    <label class="form-control-error">{{errorName}}</label>
+                </div>
+                <div class="m-3">
+                    <label for ="email" class="form-control-label">Email</label>
+                    <input type="email" [(ngModel)]="email" name="email" (keyup)="checkIsEmailInvalid()" placeholder="Enter email" class="form-control" required>
+                    <label class="form-control-error">{{errorEmail}}</label>
+                </div>
+
+                <div class="m-3">
+                    <label for ="phone" class="form-control-label">Phone</label>
+                    <input type="tel" [(ngModel)]="phone" name="phone" (keyup)="checkIsPhoneInvalid()" placeholder="Enter number" class="form-control" required>
+                    <label class="form-control-error">{{errorPhone}}</label>
+                </div>
+
+                <input type="submit" class="btn btn-primary" [value]="formType === 'add'?'Add':'Save'">
+            </form>
+        </div>
+    </div>
+    <div class="table-container">
+
+        <app-child [users]="users" (deleteEvent)="deleteUser($event)" (editEvent)="editUser($event)">
+        </app-child>
+
+    </div>
+</div>
