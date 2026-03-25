@@ -44,7 +44,7 @@ export class AddUserComponent{
    return true
   }
 
-  const pattern=/^[a-zA-Z\s]{3,}$/
+  const pattern=/^[a-zA-Z\s]+$/
 
   if(!pattern.test(this.name)){
    this.errorName="Name must contain at least 3 characters"
@@ -101,7 +101,7 @@ export class AddUserComponent{
   const phoneInvalid = this.checkPhone()
 
   if(nameInvalid || emailInvalid || phoneInvalid){
-   return
+   return 
   }
 
   const user:User={
