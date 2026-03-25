@@ -1,0 +1,26 @@
+<div class="row mt-5">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <input type="text" class="form-control" [(ngModel)]="data" >
+  </div>
+  <div class="col-4">
+    <div class="row">
+      <div> Result: </div>
+      <div>
+        <input type="radio" name="result"  value="result1" [(ngModel)]="result" id="result1">&nbsp;
+        <label for="result1"> Result1 </label>
+      </div>
+      <div>
+        <input type="radio" name="result"  value="result2" [(ngModel)]="result" id="result2">&nbsp;
+        <label for="result2"> Result2 </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+@if (result === 'result1') {
+  <app-result1 [data]="data"></app-result1>
+}@else
+{
+  <app-result2 [data]="data"></app-result2>
+}

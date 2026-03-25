@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.row{
+    display:flex;
+    flex-wrap: wrap;
+}
+.col-1{flex: 0 0 calc(100% / 12 * 1);}
+.col-2{flex: 0 0 calc(100% / 12 * 2);}
+.col-3{flex: 0 0 calc(100% / 12 * 3);}
+.col-4{flex: 0 0 calc(100% / 12 * 4);}
+.col-5{flex: 0 0 calc(100% / 12 * 5);}
+.col-6{flex: 0 0 calc(100% / 12 * 6);}
+.col-7{flex: 0 0 calc(100% / 12 * 7);}
+.col-8{flex: 0 0 calc(100% / 12 * 8);}
+.col-9{flex: 0 0 calc(100% / 12 * 9);}
+.col-10{flex: 0 0 calc(100% / 12 * 10);}
+.col-11{flex: 0 0 calc(100% / 12 * 11);}
+.col-12{flex: 0 0 calc(100% / 12 * 12);}
+
+.g-0{gap: 0;}
+.g-1{gap: 0.25rem;} 
+.g-2{gap: 0.5rem;}
+.g-3{gap: 0.75rem;}
+.g-4{gap: 1rem;}
+.g-5{gap: 1.25rem;}
+.g-6{gap: 1.5rem;}
+.g-7{gap: 2rem;}
+
+.p-0{padding: 0;}
+.p-1{padding: 0.25rem;} 
+.p-2{padding: 0.5rem;}
+.p-3{padding: 0.75rem;}
+.p-4{padding: 1rem;}
+.p-5{padding: 1.25rem;}
+.p-6{padding: 1.5rem;}
+.p-7{padding: 2rem;}
+
+
+.mt-0{margin-top: 0;}
+.mt-1{margin-top: 0.25rem;}
+.mt-2{margin-top: 0.5rem;}
+.mt-3{margin-top: 0.75rem;}
+.mt-4{margin-top: 1rem;}
+.mt-5{margin-top: 1.25rem;}
+.mt-6{margin-top: 1.5rem;}
+.mt-7{margin-top: 2rem;}
+
+.form-control{
+    width: 100%;
+    padding:1rem;
+    border: 1px solid #ccc;
+    font-size: 1.5rem;
+    border-radius: 15px;
+}
+.text-center{
+    text-align: center;
+}
+.card{
+    border: 1px solid #ccc;
+    border-radius: 14px;
+}
