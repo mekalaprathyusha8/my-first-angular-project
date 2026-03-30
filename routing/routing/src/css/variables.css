@@ -1,0 +1,62 @@
+/* :root{
+    --primary:rgb(176, 69, 87);
+    --primary-dark:rgb(63, 4, 14);
+    --primary-light:rgb(222, 149, 161);
+
+    --secondary:rgba(236, 235, 232, 0.697);
+    
+    --success:green;
+    --warning:yellow;
+    --danger:red;
+    --info:rgb(38, 133, 196);
+    /* --colorwhite:white; */
+
+    /* --white:white;
+    --dark:black;
+
+    --gray-100:gray;
+    --gray-200:rgb(108, 106, 106);
+    --gray-300:rgb(56, 56, 56);
+    --gray-400:rgb(46, 46, 46);
+    --border-color:rgb(46, 46, 46);
+    
+} */ 
+
+
+
+
+:root{
+    --primary:rgb(247, 56, 88);
+    --primary-dark:rgb(63, 4, 14);
+    --primary-light:rgb(222, 149, 161);
+    --primary-hover:rgb(168, 20, 113);
+
+    --secondary:rgba(192, 147, 12, 0.697);
+    
+    --success:green;
+    --success-hover:rgb(11, 66, 11);
+    --warning:yellow;
+    --warning-hover:rgb(183, 183, 12);
+    --danger:red;
+    --danger-hover:rgb(211, 9, 9);
+    --info:rgb(38, 133, 196);
+    --info-hover:rgb(15, 15, 112);
+    /* --colorwhite:white; */
+
+    --white:white;
+    --dark:black;
+    --mutted:rgb(128, 128, 128);
+
+    --gray-100:gray;
+    --gray-200:rgb(108, 106, 106);
+    --gray-300:rgb(56, 56, 56);
+    --gray-400:rgb(46, 46, 46);
+
+    --border-color:rgb(40, 40, 160);
+    --card-color:1px solid lightpink;
+    --card-border-radius: 20px;
+    --card-box-shadow: 5px 10px lightgray;
+    --card-hover-box-shadow: 0 8px 18px rgb(71, 63, 79);
+    --card-divider-color: rgb(182, 182, 56) ;
+    --form-border-color:1px solid rgb(78, 176, 78);
+}
