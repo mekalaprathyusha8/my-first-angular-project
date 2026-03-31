@@ -1,12 +1,18 @@
-<div class="row">
-    <div class="p-4 me-auto"><a routerLink="./">Vbit</a></div>
-    
+<!-- <div class="row">
+    <div class="p-4 me-auto"><a routerLink="./">Vbit</a></div> -->
     <!-- <div class="p-4 bg-primary text-white"><a [routerLink]="urls[1]">About</a></div>
     <div class="p-4 bg-primary text-white"><a [routerLink]="urls[2]">Contact</a></div>
     <div class="p-4 bg-primary text-white"><a [routerLink]="urls[3]">Login</a></div>
     <div class="p-4 bg-primary text-white"><a [routerLink]="urls[4]">Services</a></div> -->
 
-    @for(url of urls;track $index) {
+    <!-- @for(url of urls;track $index) {
+        <div class="p-4 bg-primary text-white"><a [routerLink]="url['url']">{{url['text']}}</a></div>
+    }
+</div> -->
+
+<div class="row">
+    <div class="p-4 me-auto"><a routerLink="./">Prathyusha</a></div>
+@for(url of urls;track $index) {
         <div class="p-4 bg-primary text-white"><a [routerLink]="url['url']">{{url['text']}}</a></div>
     }
 </div>

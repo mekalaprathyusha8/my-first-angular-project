@@ -1,0 +1,50 @@
+.form-control{
+    /* display: block; */
+    width: 100%;
+    padding: .5rem .75rem;
+    border: var(--form-border);
+    font-size: 1rem;
+    border-radius: 6px;
+    /*border-bottom: var(--form-border-color); */
+}
+.form-control-lg{
+    /* display: block; */
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    border: var(--form-border-color);
+    border-radius: 6px;
+    font-size: 1.2rem;
+}
+.form-control-small{
+    display: block;
+    width: 100%;
+    padding: 0.25rem .5rem;
+    border:var(--form-border-color);
+    border-radius: 4px;
+    font-size: .8rem;
+}
+.form-control:focus{border:none; outline: none; border: 1px solid var(--primary);}
+.form-error{border: 1px solid var(--danger);}
+.form-success{border:1px solid var(--success);}
+.form-label{display: block; margin-bottom: .25rem ; padding-left: .25rem;}
+.form-error-text{ color: var(--danger); display: block; margin-top: .25rem ; padding-left: .25rem;}
+.form-group{
+    position: relative;
+}
+.form-icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.form-icon-left{
+    left: 10px;
+}
+.form-icon-right{
+    right: 10px;
+}
+.form-left{
+    padding-left: 35px;
+}
+.form-right{
+    padding-right: 35px;
+}

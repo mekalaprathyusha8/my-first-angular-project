@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SampleService } from '../services/sample.service';
 
 @Component({
   selector: 'app-about',
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
-export class About {}
+export class About {
+  constructor(private sampleService: SampleService) {
+    console.log('About component');
+    console.log(sampleService.title);
+  }
+}

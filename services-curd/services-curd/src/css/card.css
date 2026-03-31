@@ -1,0 +1,16 @@
+.card{
+    border: var(--card-color);
+    border-radius: var(--card-border-radius);
+}
+.card-shadow{
+    box-shadow: var(--card-box-shadow);
+}
+.card-hover{
+    transition: transform .2s ease,box-shadow .9s ease;
+    will-change: transform;
+}
+.card-hover:hover{
+    cursor: pointer;
+    transform: translatey(-4px);
+    box-shadow: var(--card-hover-box-shadow);
+}
