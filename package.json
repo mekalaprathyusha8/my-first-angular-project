@@ -1,0 +1,23 @@
+{
+  "name": "angularpractise",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/mekalaprathyusha8/my-first-angular-project#readme",
+  "bugs": {
+    "url": "https://github.com/mekalaprathyusha8/my-first-angular-project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mekalaprathyusha8/my-first-angular-project.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "rxjs": "^7.8.2"
+  }
+}

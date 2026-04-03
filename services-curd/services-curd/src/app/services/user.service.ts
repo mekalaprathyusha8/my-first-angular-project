@@ -20,4 +20,15 @@ export class UserService {
     deleteUser(userid: number){
       this.users = this.users.filter(user => user.userid!== userid);
     }
+    getUser(userid: number){
+    return this.users.find(user => user.userid === userid);
+  }
+  editUser(userid: number, user: UserModel){
+     this.users = this.users.map(u => {
+      if(u.userid === userid){
+        return user;
+      }
+      return u;
+    });
+  }
 }

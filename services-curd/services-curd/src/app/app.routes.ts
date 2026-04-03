@@ -14,6 +14,10 @@ export const routes: Routes = [
         component: AddUser
     },
     {
+        path:'add-user/:userid',
+        component: AddUser
+    },
+    {
         path:'view-user',
         component:ViewUser
     },

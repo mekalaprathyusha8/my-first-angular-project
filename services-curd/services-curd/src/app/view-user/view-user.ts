@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { UserModel } from '../models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-user',
@@ -10,6 +11,7 @@ import { UserModel } from '../models/user.model';
 })
 export class ViewUser {
   userService: UserService = inject(UserService);
+  router:Router = inject(Router)
   users:UserModel[] = []
   ngOnInit(){
     this.getUsers();
@@ -22,4 +24,8 @@ export class ViewUser {
     this.userService.deleteUser(userid);
     this.getUsers();
   }
+  editUser(userid: number){
+    this.router.navigate(['/add-user', {userid}]);
+  }
+  
 }

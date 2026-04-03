@@ -1,0 +1,35 @@
+.row { display: flex;flex-wrap: wrap; }
+.col-1 { width: calc(100% / 12); }
+.col-2 { width: calc(100% / 12 * 2); }
+.col-3 { width: calc(100% / 12 * 3); }
+.col-4 { width: calc(100% / 12 * 4); }
+.col-5 { width: calc(100% / 12 * 5); }
+.col-6 { width: calc(100% / 12 * 6); }
+.col-7 { width: calc(100% / 12 * 7); }
+.col-8 { width: calc(100% / 12 * 8); }
+.col-9 { width: calc(100% / 12 * 9); }
+.col-10 { width: calc(100% / 12 * 10); }
+.col-11 { width: calc(100% / 12 * 11); }
+.col-12 { width: calc(100%) }
+
+.flex { display: flex; }
+.flex-1 { flex: 1; }
+.flex-2 { flex: 2; }
+.flex-3 { flex: 3; }
+.flex-4 { flex: 4; }
+.flex-5 { flex: 5; }
+.flex-6 { flex: 6; }
+.flex-7 { flex: 7; }    
+.flex-8 { flex: 8; }
+.flex-9 { flex: 9; }
+.flex-10 { flex: 10; }
+.flex-11 { flex: 11; }
+.flex-12 { flex: 12; }
+
+.g-1 { gap: .25rem; }
+.g-2 { gap: .5rem; }
+.g-3 { gap: .75rem; }
+.g-4 { gap: 1rem; }
+.g-5 { gap: 1.25rem; }
+.g-6 { gap: 1.5rem; }
+.g-7 { gap: 2rem; }
